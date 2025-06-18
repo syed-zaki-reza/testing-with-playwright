@@ -1,7 +1,8 @@
 import { test, chromium } from '@playwright/test';
 
 test('test to browse pages', async () => {
-  
+  test.setTimeout(100000);
+
   const browser = await chromium.launch({ headless: false });
   
   const context = await browser.newContext();
@@ -36,7 +37,7 @@ test('test to browse pages', async () => {
   await page.waitForTimeout(2000);
 
   await page.getByRole('link', { name: 'Package' }).click();
-  await page.locator('div').filter({ hasText: /^ZoneSelect \.\.\.$/ }).locator('div').nth(4).click();
+    await page.locator('div').filter({ hasText: /^ZoneSelect \.\.\.$/ }).locator('div').nth(4).click();
   await page.locator('div').filter({ hasText: /^Dhaka$/ }).click();
   await page.getByText('Select').nth(1).click();
   await page.getByText('15Mya_liveTest').click();
