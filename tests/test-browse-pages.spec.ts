@@ -1,10 +1,12 @@
 import { test, chromium } from '@playwright/test';
 
-test('test to browse pages', async () => {
-  test.setTimeout(100000);
+test.setTimeout(100000);
 
+test('test to browse pages', async () => {
+  
   const browser = await chromium.launch({ headless: false });
   
+  /*
   const context = await browser.newContext();
   const page = await context.newPage();
 
@@ -15,10 +17,24 @@ test('test to browse pages', async () => {
   await page.getByRole('textbox', { name: 'Password' }).click();
   await page.waitForTimeout(2000);
   await page.getByRole('textbox', { name: 'Password' }).fill('123456');
-  await page.waitForTimeout(2000);
-
+  await page.waitForTimeout(2000); 
+  
   await page.getByRole('button', { name: 'Sign in' }).click();
   await page.waitForTimeout(2000);
+  */
+
+  // delete from this part ---
+ 
+  const context = await browser.newContext({
+    // Load the saved login session
+    storageState: 'storage/storageState.json'
+  });
+  
+  const page = await context.newPage();
+  await page.goto('http://192.168.1.125:31767/', { waitUntil: 'networkidle' });
+  await page.waitForTimeout(2000);
+
+  // --- to  this part if don't want 'session' login
 
   await page.getByRole('link', { name: 'Router' }).click();
   await page.waitForTimeout(2000);

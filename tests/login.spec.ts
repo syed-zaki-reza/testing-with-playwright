@@ -19,7 +19,9 @@ test('Login with valid credentials in Incognito mode', async () => {
 
   // 3. Click the "Sign In" button
   await page.click('button:has-text("Sign In")');
-  await page.waitForTimeout(5000); // Wait 5 sec to observe login response
+  await page.waitForNavigation();
+  await context.storageState({ path: 'storage/storageState.json' }); // saving login & coockies
+  
 
   // 4. Navigate to the SMS page manually
   await page.goto('http://192.168.1.125:31767/isp-sms');
