@@ -1,0 +1,35 @@
+{
+  "cookies": [
+    {
+      "name": "AUTH_SESSION_ID_LEGACY",
+      "value": "58398f6a-7894-4961-adcc-58ec0f328aa0.isp-keycloak-spi-keycloakx-0-11243",
+      "domain": "192.168.1.125",
+      "path": "/auth/realms/isp/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "KEYCLOAK_IDENTITY_LEGACY",
+      "value": "eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2OWJiNzQyNC1lYTkzLTQ5MjUtOTQ5Ny0yYjJlM2E4ZGY3ODQifQ.eyJleHAiOjE3NTA3MTM0OTYsImlhdCI6MTc1MDY2MzA5NiwianRpIjoiYWUyMmJjN2ItNjE1MS00MjI2LWE3ZmUtNDFlMjRiY2MyZTEzIiwiaXNzIjoiaHR0cDovLzE5Mi4xNjguMS4xMjU6MzE2NzUvYXV0aC9yZWFsbXMvaXNwIiwic3ViIjoiMTY5Zjg0ZDUtYjFhZC00YWNmLTkwOGUtNjQ1NTg4ZWYwMjU5IiwidHlwIjoiU2VyaWFsaXplZC1JRCIsInNpZCI6IjU4Mzk4ZjZhLTc4OTQtNDk2MS1hZGNjLTU4ZWMwZjMyOGFhMCIsInN0YXRlX2NoZWNrZXIiOiJfcnFtcXQybEpuM1YxbHBGY1ZpNUlxQ0xsb1UxdVd0aXBYN1JLM0JOQ3IwIn0.doIG1HKG617HbwkXmEJ7e1p55TNE8WWvwcZflSxzRTo4KLrwwazv4IfdzLokZWZ3eVTcNRa_X0Fp1h2CDRz-GQ",
+      "domain": "192.168.1.125",
+      "path": "/auth/realms/isp/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "KEYCLOAK_SESSION_LEGACY",
+      "value": "\"isp/169f84d5-b1ad-4acf-908e-645588ef0259/58398f6a-7894-4961-adcc-58ec0f328aa0\"",
+      "domain": "192.168.1.125",
+      "path": "/auth/realms/isp/",
+      "expires": 1750713495.834698,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}
