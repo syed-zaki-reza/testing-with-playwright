@@ -1,4 +1,5 @@
 import { test, chromium } from '@playwright/test';
+import { LoginPage } from '../pages/loginPage.spec.ts';
 
 test.setTimeout(100000);
 
@@ -25,13 +26,14 @@ test('test to browse pages', async () => {
 
   // delete from this part ---
  
-  const context = await browser.newContext({
-    // Load the saved login session
-    storageState: 'storage/storageState.json'
-  });
-  
+  const context = await browser.newContext();
   const page = await context.newPage();
-  await page.goto('http://192.168.1.125:31767/', { waitUntil: 'networkidle' });
+
+  // Navigate & login to the site
+  const loginPage = new LoginPage(page)
+ 
+  await loginPage.login('http://192.168.1.125:31767/', 'allpermission@gmail.com', '123456');
+  await loginPage.saveStorageState('storage/storageState.json');
   await page.waitForTimeout(2000);
 
   // --- to  this part if don't want 'session' login
@@ -53,7 +55,7 @@ test('test to browse pages', async () => {
   await page.waitForTimeout(2000);
 
   await page.getByRole('link', { name: 'Package' }).click();
-    await page.locator('div').filter({ hasText: /^ZoneSelect \.\.\.$/ }).locator('div').nth(4).click();
+  await page.locator('div').filter({ hasText: /^ZoneSelect \.\.\.$/ }).locator('div').nth(4).click();
   await page.locator('div').filter({ hasText: /^Dhaka$/ }).click();
   await page.getByText('Select').nth(1).click();
   await page.getByText('15Mya_liveTest').click();
@@ -64,6 +66,7 @@ test('test to browse pages', async () => {
   await page.waitForTimeout(2000);
 
   await page.locator('span').filter({ hasText: 'adminallpermission@gmail.com' }).getByRole('link').click();
+  await page.waitForTimeout(5000);
 
   await context.close();
   await browser.close();
