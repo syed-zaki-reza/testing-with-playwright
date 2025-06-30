@@ -1,0 +1,20 @@
+{
+  "fullName": "Test 30 June no 04",
+  "phone": "01521437784",
+  "nationalId": "5566778899",
+  "serviceDay": "20",
+  "hour": "08:",
+  "minute": ":00",
+  "associate": "",
+  "router": "15Mya_liveTest",
+  "package": "10Mbps_test_15May",
+  "connectionType": "PPPoE",
+  "kam": "Darrel Jenkins",
+  "connectivityType": "Share",
+  "autoDueAllowed": "No",
+  "subscription": "Enable",
+  "sms": "No",
+  "accountService": "Valid",
+  "autoRecharge": "Allow",
+  "email": "jmj31097@jioso.com"
+}
